@@ -10,6 +10,8 @@ Local Web Server is a droplet wrapper around the simple [built-in web server fun
 
 ## Usage
 
+![Screen Recording](https://github.com/superpixel/Local-Web-Server/raw/master/Demo/Screenrecording.gif)
+
 Launch Local Web Server to choose the root folder of your web project (or just Drag & Drop it onto the application).
 
 A dialog will ask you if you want to see the hosted website in your default browser.
