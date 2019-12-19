@@ -4,7 +4,7 @@ Local Web Server is a droplet wrapper around the simple [built-in web server fun
 
 ## Installation
 
-1. Clone or download the repository to your machine.
+1. Clone or [download](https://github.com/superpixel/Local-Web-Server/archive/master.zip) the repository to your machine.
 2. Drag & Drop the file *compile.sh* into a Terminal.app window and press Enter.
 3. Local Web Server will be compiled and afterwards you can move the application wherever you want.
 
