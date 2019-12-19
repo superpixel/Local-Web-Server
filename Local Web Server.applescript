@@ -58,31 +58,33 @@ end checkKirby
 on runServer(is_kirby, path_to_folder)
 	if is_kirby is true then
 		try
-			set pid to do shell script "cd" & space & path_to_folder & ";" & "php -S" & space & Â
-				host & ":" & port & space & Â
-				"kirby/router.php" & Â
-				" > /dev/null 2>&1 & echo $!"
+			if pid is equal to missing value then
+				set pid to do shell script "cd" & space & path_to_folder & ";" & "php -S" & space & Â
+					host & ":" & port & space & Â
+					"kirby/router.php" & Â
+					" > /dev/null 2>&1 & echo $!"
+			end if
 		on error err_msg
 			display dialog err_msg buttons {"OK"} default button "OK"
 		end try
 	else
 		try
-			set pid to do shell script "cd" & space & path_to_folder & ";" & Â
-				"php -S" & space & Â
-				host & ":" & port & Â
-				" > /dev/null 2>&1 & echo $!"
+			if pid is equal to missing value then
+				set pid to do shell script "cd" & space & path_to_folder & ";" & Â
+					"php -S" & space & Â
+					host & ":" & port & Â
+					" > /dev/null 2>&1 & echo $!"
+			end if
 		on error err_msg
 			display dialog err_msg buttons {"OK"} default button "OK"
 		end try
 	end if
-	
 	set ask_show_served to display dialog Â
 		"Would you like to see the local served website?" buttons Â
 		{"Cancel", "Show"} default button "Show" cancel button "Cancel" giving up after 30
 	if button returned of ask_show_served is equal to "Show" then
 		open location "http://" & host & ":" & port
 	end if
-	
 end runServer
 
 on quit
